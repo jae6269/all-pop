@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/header.css';
-
+import { Link } from 'react-router-dom';
 function Header() {
   return (
     <div className="wrapper__head">
@@ -8,16 +8,11 @@ function Header() {
         <h1>ALPOP</h1>
       </div>
       <div className="head__menu">
-        <a href="./joby_home.html">
-          <span id="menu__home">Home</span>
-        </a>
-        <a href="./joby_story.html">
-          <span id="menu__story">Map</span>
-        </a>
+        <Link to="/">Home</Link>
 
-        <a href="./joby_newsroom.html">
-          <span id="menu__newsroom">Login</span>
-        </a>
+        <Link to="/map">Map</Link>
+
+        <Link to="/login">Login</Link>
       </div>
     </div>
   );

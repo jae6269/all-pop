@@ -1,30 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import react, {useState} from react
-import MyCarousel from './components/MyCarousel';
+
 import Header from './components/Header';
-import CardExample from './components/Card';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import MapPage from './pages/MapPage';
+import { Route } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <div className="container">
-        <div className="header">
-          <Header></Header>
-        </div>
-        <div className="body">
-          <div className="body-carousel">
-            <MyCarousel></MyCarousel>
-          </div>
-          <div className="body-cards">
-            <CardExample></CardExample>
-            <CardExample></CardExample>
-            <CardExample></CardExample>
-            <CardExample></CardExample>
-            <CardExample></CardExample>
-          </div>
-        </div>
-      </div>
+      <Header></Header>
+
+      <Route path="/" exact={true} component={HomePage}></Route>
+      <Route path="/login" exact={true} component={LoginPage}></Route>
+      <Route path="/map" exact={true} component={MapPage}></Route>
     </div>
   );
 }
